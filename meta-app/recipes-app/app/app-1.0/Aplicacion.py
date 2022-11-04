@@ -1,4 +1,4 @@
-import tensorflow as tf
+#import tensorflow as tf
 
 #para RaspberryPi
 import tflite_runtime.interpreter as tflite
@@ -15,7 +15,7 @@ import time
 
 
 #Path y nombre del modelo tflite
-#TFLITE_MODEL = "tflite_models/modelo_caras.tflite"
+#TFLITE_MODEL = "modelo_caras.tflite"
 #En Rasp
 TFLITE_MODEL = "/usr/bin/modelo_caras.tflite"
 
@@ -28,17 +28,14 @@ input_details = tflite_interpreter.get_input_details()
 output_details = tflite_interpreter.get_output_details()
 
 
-
-
-
 #Configuraciones
 
 #permite utilizar la cámara
 captura = cv2.VideoCapture(0)
 #clasificador para buscar la posición de la cara
-#faceCascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
+#faceCascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 #En Rasp
-faceCascade = cv2.CascadeClassifier('/usr/share/opencv4/haarcascade_frontalface_default.xml')
+faceCascade = cv2.CascadeClassifier('/usr/bin/haarcascade_frontalface_default.xml')
 
 #variable para el tiempo
 

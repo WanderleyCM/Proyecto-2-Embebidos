@@ -15,7 +15,8 @@ LIC_FILES_CHKSUM = ""
 # No information for SRC_URI yet ( only an external source tree was specified )
 
 SRC_URI = "file://Aplicacion.py \
-	file://modelo_caras.tflite"
+	file://modelo_caras.tflite \
+	file://haarcascade_frontalface_default.xml"
 
 # NOTE: no Makefile found , unable to determine what needs to be done
 
@@ -26,5 +27,6 @@ do_install () {
 	install -d ${D}${bindir}
 	install -m 0755 Aplicacion.py ${D}${bindir}
 	install -m 0755 modelo_caras.tflite ${D}${bindir}
+	install -m 0755 haarcascade_frontalface_default.xml ${D}${bindir}
 }
 
