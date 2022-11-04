@@ -35,7 +35,11 @@ captura = cv2.VideoCapture(0)
 #clasificador para buscar la posición de la cara
 #faceCascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 #En Rasp
-faceCascade = cv2.CascadeClassifier('/usr/bin/haarcascade_frontalface_default.xml')
+#faceCascade = cv2.CascadeClassifier('/usr/bin/haarcascade_frontalface_default.xml')
+
+face_cascade = cv2.CascadeClassifier()
+
+face_cascade.load(cv2.samples.findFile('/usr/bin/haarcascade_frontalface_default.xml'))
 
 #variable para el tiempo
 
